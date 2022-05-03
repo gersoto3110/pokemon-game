@@ -1,4 +1,6 @@
-const usePaginate = (array, qtyItemsPerPage = 20) => {
+import { useState } from "react";
+
+const usePaginate = (array, qtyItemsPerPage = 12) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(qtyItemsPerPage);
 
@@ -7,7 +9,7 @@ const usePaginate = (array, qtyItemsPerPage = 20) => {
   const currentItems = array?.slice(firstIndex, lastIndex);
 
   const handleNextPage = () => {
-    if (currentItems?.length < itemsPerPage) return;
+    if (array.length <= lastIndex) return;
     setCurrentPage(currentPage + 1);
   };
 
@@ -16,11 +18,22 @@ const usePaginate = (array, qtyItemsPerPage = 20) => {
     setCurrentPage(currentPage - 1);
   };
 
-  useEffect(() => {
+  const handleFirstPage = () => {
     setCurrentPage(1);
-  }, [array, itemsPerPage]);
+  };
 
-  return { currentItems, currentPage, handleNextPage, handlePrevPage };
+  const handleLastPage = () => {
+    setCurrentPage(array.length);
+  };
+
+  return {
+    currentItems,
+    currentPage,
+    handleNextPage,
+    handlePrevPage,
+    handleFirstPage,
+    handleLastPage,
+  };
 };
 
 export default usePaginate;
