@@ -1,5 +1,35 @@
-* {
+:root {
+  --font: "Poppins", sans-serif;
+}
+
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font);
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  button {
+    border: 2px solid currentcolor;
+  }
+}
+
+@media screen and (min-width: 600px){
+  html {
+    font-size: 16px;
+  }
 }
