@@ -1,0 +1,7 @@
+.pkm-card {
+  width: 10rem;
+  height: 15rem;
+  position: relative;
+  transform-style: preserve-3d;
+  margin: .8rem;
+}
