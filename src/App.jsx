@@ -1,7 +1,8 @@
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 import { useState } from "react";
 import Battle from "./views/Battle";
-import Selection from "./views/Selection";
+import Selection from "./views/Selection/Selection";
+import PokedexProvider from "./contexts/Pokedex";
 
 /* 
   Crear un componente Selection que cuente con un input que permita filtrar un pokemon.
@@ -169,16 +170,12 @@ import Selection from "./views/Selection";
 function App() {
   const [ready, setReady] = useState(false);
 
-  const readyToBattle = () => {
-    setReady(true);
-  };
-
   return (
-    <>
+    <PokedexProvider number={600}>
       <Layout>
-        {ready ? <Battle /> : <Selection onReady={readyToBattle} />}
+        {ready ? <Battle /> : <Selection startBattle={() => setReady(true)} />}
       </Layout>
-    </>
+    </PokedexProvider>
   );
 }
 

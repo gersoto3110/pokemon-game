@@ -1,12 +1,16 @@
-import "./Pokemons.css"
+import "./Pokemons.css";
 
 import PokemonCard from "../PokemonCard/PokemonCard";
 
-const Pokemons = ({ pokemons }) => {
+const Pokemons = ({ pokemons, style, startBattle }) => {
   return (
-    <div className="pokemons">
+    <div className="pokemons" style={style}>
       {pokemons.map((pokemon) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+        <PokemonCard
+          key={pokemon.id}
+          pokemon={pokemon}
+          startBattle={startBattle}
+        />
       ))}
     </div>
   );

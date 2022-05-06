@@ -1,7 +1,7 @@
 .pokemons {
   display: flex;
   flex-wrap: wrap;
-  align-items: space-between;
+  align-content: center;
   justify-content: center;
-  max-width: 1200px;
+  gap: 1.2rem;
 }

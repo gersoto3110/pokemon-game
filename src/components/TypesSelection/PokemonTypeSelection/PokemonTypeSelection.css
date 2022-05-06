@@ -1,0 +1,28 @@
+.pkm-type {
+  --size: 2.5rem;
+  border-radius: 100%;
+  height: var(--size);
+  width: var(--size);
+  opacity: var(--opacity);
+  transform: scale(var(--scale));
+  transition: 200ms all;
+
+  background: var(--color);
+  box-shadow: 0 0 2rem var(--color);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pkm-type img {
+  --img-size: 60%;
+  height: var(--img-size);
+  width: var(--img-size);
+}
+
+@media (hover:hover) {
+  .pkm-type:hover {
+    transform: scale(1.2);
+  }
+}

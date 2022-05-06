@@ -8,7 +8,7 @@ import FrontCard from "./FrontCard/FrontCard";
 
 import colorsTypePokemon from "../../constants/colorsTypePokemon";
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({ pokemon, startBattle }) => {
   const [flipped, setFlipped] = useState(false);
 
   const handlerFlipped = () => setFlipped(!flipped);
@@ -36,6 +36,9 @@ const PokemonCard = ({ pokemon }) => {
         backgroundColor={colorsTypePokemon.dark[pokemon.types[0]]}
       >
         <BackCard stats={pokemon.stats} />
+        <button onClick={() => startBattle()} className="btn-start-battle">
+          ¡Yo te elijo!
+        </button>
       </Wrapper>
     </article>
   );

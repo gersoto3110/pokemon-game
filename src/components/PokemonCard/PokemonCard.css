@@ -3,5 +3,17 @@
   height: 15rem;
   position: relative;
   transform-style: preserve-3d;
-  margin: .8rem;
+}
+
+.btn-start-battle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: .6rem;
+  padding: .1rem .3rem;
+}
+
+.btn-start-battle:hover {
+  transform: scale(1.2);
 }

@@ -1,7 +1,11 @@
 import axios from "axios";
 
-export default function getAllData(urls) {
-  return Promise.all(urls.map((url) => axios(url)))
-    .then(axios.spread((...responses) => responses.map((res) => res.data)))
-    .catch((error) => error);
+export default async function getAllData(urls) {
+  try {
+    const responses = await Promise.all(urls.map((url) => axios(url)));
+    return responses.map((res) => res.data);
+
+  } catch (error) {
+    throw error;
+  }
 }

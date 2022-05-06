@@ -1,0 +1,43 @@
+.selection {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+
+  row-gap: 1rem;
+
+  height: 90vh;
+  width: 90vw;
+
+  grid-template-columns: 20vw 1fr;
+  grid-template-areas:
+    "title title"
+    "search search"
+    "types cards"
+    "pag pag";
+}
+
+@media (min-width: 600px) {
+  .selection {
+    row-gap: 2 rem;
+    width: 80vw;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "search"
+      "types"
+      "cards"
+      "pag";
+  }
+}
+
+@media (min-width: 1400px) {
+  .selection {
+    grid-template-columns: 15vw auto;
+    grid-template-areas:
+      "title title"
+      "search types"
+      "cards cards"
+      "pag pag"
+  }
+}

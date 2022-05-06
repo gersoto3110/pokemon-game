@@ -1,0 +1,20 @@
+.wrapper-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: .6rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .wrapper-types {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper-types {
+    justify-content: space-around;
+  }
+}
