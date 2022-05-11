@@ -8,9 +8,8 @@ const PokedexContext = createContext();
 const PokedexProvider = ({ children, number = 151 }) => {
   const urls = getManyPokemonsUrlApi(number);
   const { data, error, loading } = useGetAllData(urls);
-  const pokedex = createPokedex(data);
 
-  const contextValue = { pokedex, error, loading };
+  const contextValue = { pokedex: createPokedex(data), error, loading };
 
   return (
     <PokedexContext.Provider value={contextValue}>

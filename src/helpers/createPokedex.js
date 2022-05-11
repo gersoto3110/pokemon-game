@@ -1,4 +1,5 @@
 export default function createPokedex(data) {
+  if (!data) return [];
   return data.map((pokemon) => ({
     id: pokemon.id,
     name: pokemon.name,
@@ -8,5 +9,8 @@ export default function createPokedex(data) {
       name: e.stat.name,
       baseStat: e.base_stat,
     })),
+    attacks: pokemon.moves
+      .filter((m) => m["version_group_details"][0]["level_learned_at"] < 5)
+      .map((m) => m["move"]["url"]),
   }));
 }

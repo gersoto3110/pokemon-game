@@ -1,0 +1,25 @@
+.battle {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+
+  row-gap: 1rem;
+
+  width: 90vw;
+  height: 80vh;
+
+  max-width: 600px;
+  min-height: 500px;
+
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem gray;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% 60% 20%;
+
+  grid-template-areas:
+    "title title"
+    "player ia"
+    "panel panel";
+}

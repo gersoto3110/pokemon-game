@@ -1,6 +1,4 @@
 .lds-dual-ring {
-  --size: 5rem;
-  --after-size: calc(var(--size) - 1rem);
   display: inline-block;
   width: var(--size);
   height: var(--size);
@@ -9,12 +7,15 @@
 .lds-dual-ring:after {
   content: " ";
   display: block;
+
   width: var(--after-size);
   height: var(--after-size);
   margin: .5rem;
+
   border-radius: 50%;
-  border: .5rem solid var(--color);
+  border: var(--size-border) solid var(--color);
   border-color: var(--color) transparent var(--color) transparent;
+  
   animation: lds-dual-ring 2s linear infinite;
 }
 

@@ -36,7 +36,7 @@ const PokemonCard = ({ pokemon, startBattle }) => {
         backgroundColor={colorsTypePokemon.dark[pokemon.types[0]]}
       >
         <BackCard stats={pokemon.stats} />
-        <button onClick={() => startBattle()} className="btn-start-battle">
+        <button onClick={() => startBattle(pokemon)} className="btn-start-battle">
           ¡Yo te elijo!
         </button>
       </Wrapper>

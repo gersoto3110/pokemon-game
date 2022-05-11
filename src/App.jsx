@@ -1,7 +1,6 @@
 import Layout from "./components/Layout/Layout";
 import { useState } from "react";
-import Battle from "./views/Battle";
-import Selection from "./views/Selection/Selection";
+import { Selection, Battle } from "./views";
 import PokedexProvider from "./contexts/Pokedex";
 
 /* 
@@ -168,12 +167,25 @@ import PokedexProvider from "./contexts/Pokedex";
 */
 
 function App() {
-  const [ready, setReady] = useState(false);
+  // const [ready, setReady] = useState(false);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+
+  const handleStartBattle = (pokemon) => {
+    setSelectedPokemon(pokemon);
+  };
+
+  // const handleEndBattle = () => {
+  //   setSelectedPokemon(null);
+  // };
 
   return (
-    <PokedexProvider number={600}>
+    <PokedexProvider>
       <Layout>
-        {ready ? <Battle /> : <Selection startBattle={() => setReady(true)} />}
+        {!selectedPokemon ? (
+          <Selection startBattle={handleStartBattle} />
+        ) : (
+          <Battle selectedPokemon={selectedPokemon}/>
+        )}
       </Layout>
     </PokedexProvider>
   );

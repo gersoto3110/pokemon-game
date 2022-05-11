@@ -1,0 +1,32 @@
+.battle-card {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.battle-card img {
+  width: 80%;
+  height: 65%;
+}
+
+.battle-card span {
+  --yellow: #f8ef72;
+  --red: #f77a7a;
+  --green: #b3f594;
+  
+  width: 8rem;
+  height: 2.5rem;
+  
+  border-radius: .6rem;
+  background: var(--color);
+  box-shadow: 0 0 1rem var(--color);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
