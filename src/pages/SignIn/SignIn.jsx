@@ -3,6 +3,7 @@ import "./SignIn.css";
 import { useReducer } from "react";
 import useAuth from "../../auth/useAuth";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { SectionForm } from "../../components";
 
 const initialState = {
   email: "",
@@ -38,8 +39,7 @@ const SignIn = () => {
       {isLogged ? (
         <Navigate to="/juego-pokemon" />
       ) : (
-        <section className="sign-in">
-          <h2>Iniciar sesión</h2>
+        <SectionForm title="Iniciar sesión" className="sign-in">
           <form onSubmit={handleSubmit} className="login-form">
             <input
               className="email"
@@ -69,7 +69,7 @@ const SignIn = () => {
           <button className="google" onClick={() => handleOnClick()}>
             Iniciar sesión con Google
           </button>
-        </section>
+        </SectionForm>
       )}
     </>
   );

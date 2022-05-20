@@ -8,3 +8,4 @@ export { default as Typing } from "./Typing/Typing";
 export { default as BattleCard } from "./BattleCard/BattleCard";
 export { default as AttackSelection } from "./AttackSelection/AttackSelection";
 export { default as GameOver } from "./GameOver/GameOver";
+export { default as SectionForm } from "./SectionForm/SectionForm";

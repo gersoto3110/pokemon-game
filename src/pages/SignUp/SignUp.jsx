@@ -3,6 +3,7 @@ import "./SignUp.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useReducer } from "react";
 import useAuth from "../../auth/useAuth";
+import { SectionForm } from "../../components";
 
 const initialState = {
   name: "",
@@ -30,8 +31,8 @@ const SignUp = () => {
   };
 
   return (
-    <section className="sign-up">
-      <h2>Registrarse</h2>
+    <SectionForm title="Registrarse">
+
       <form onSubmit={registerSubmit} className="register-form">
         <input
           className="name"
@@ -68,7 +69,7 @@ const SignUp = () => {
           Iniciar Sesión
         </Link>
       </form>
-    </section>
+    </SectionForm>
   );
 };
 

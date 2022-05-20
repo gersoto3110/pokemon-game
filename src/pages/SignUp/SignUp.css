@@ -1,24 +1,3 @@
-.sign-up {
-  --color: rgb(3, 165, 206);
-  max-width: 500px;
-  height: 350px;
-  border: 2px solid var(--color);
-  border-radius: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-
-  padding: 1rem 0;
-}
-
-.sign-up h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: #555;
-}
-
 .register-form {
   height: 85%;
 
@@ -53,31 +32,4 @@
 
 .register-form .register {
   grid-area: register;
-}
-
-.sign-up input,
-.sign-up button {
-  width: 90%;
-  height: 2.5rem;
-  outline: var(--color);
-  border: 1px solid var(--color);
-  border-radius: 0.3rem;
-}
-
-.sign-up input {
-  padding-left: .5rem;
-}
-
-.sign-up button {
-  background: var(--color);
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.register-form .login {
-  color: orange;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1px;
 }

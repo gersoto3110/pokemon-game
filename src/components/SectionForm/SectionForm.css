@@ -1,0 +1,48 @@
+.section-form {
+  --color: rgb(3, 165, 206);
+  max-width: 500px;
+  height: 350px;
+  border: 2px solid var(--color);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem var(--color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 1rem 0;
+}
+
+.section-form h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #555;
+}
+
+.section-form input,
+.section-form button {
+  width: 90%;
+  height: 2.5rem;
+  outline: var(--color);
+  border: 1px solid var(--color);
+  border-radius: 0.3rem;
+}
+
+.section-form input {
+  padding-left: .5rem;
+}
+
+.section-form button {
+  background: var(--color);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-form a {
+  color: orange;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
