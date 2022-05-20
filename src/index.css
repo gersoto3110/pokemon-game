@@ -32,6 +32,10 @@ input {
   all: unset;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 480px){
   html {
     font-size: 12px;

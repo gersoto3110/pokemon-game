@@ -1,27 +1,26 @@
 import "./Selection.css";
 
-import { useContext } from "react";
-import { PokedexContext } from "../../contexts/Pokedex";
-import { usePaginate, useSearch } from "../../hooks";
+import { usePaginate, useSearch } from "../../../hooks";
 import {
   Pokemons,
   Loading,
   TypesSelection,
   SearchInput,
   Pagination,
-} from "../../components";
-import itemsPerPagePerMatchMedia from "../../helpers/itemsPerPagePerMatchMedia";
+} from "../../../components";
+import itemsPerPagePerMatchMedia from "../../../helpers/itemsPerPagePerMatchMedia";
+import usePokedex from "../../../contexts/Pokedex/usePokedex";
+import useGameBattle from "../../../contexts/GameBattle/useGameBattle";
+import randomSelectItemArray from "../../../helpers/randomSelectItemArray";
 
-const Selection = ({ startBattle }) => {
-  const { pokedex, error, loading } = useContext(PokedexContext);
-
+const Selection = () => {
+  const { pokedex, error, loading } = usePokedex();
   const [currentType, setCurrentType, filterType] = useSearch(
     null,
     pokedex,
     "types"
   );
   const [search, setSearch, pokemons] = useSearch("", filterType, "name");
-
   const {
     currentItems,
     currentPage,
@@ -30,9 +29,15 @@ const Selection = ({ startBattle }) => {
     handleFirstPage,
   } = usePaginate(pokemons, itemsPerPagePerMatchMedia());
 
+  const { handleSelectedPokemon } = useGameBattle();
+
   const handleInputText = (e) => {
     if (currentPage > 1) handleFirstPage();
     setSearch(e.target.value.toLowerCase());
+  };
+
+  const handleStartBattle = (pokemon) => {
+    handleSelectedPokemon(pokemon, randomSelectItemArray(pokedex));
   };
 
   const nameGridAreas = ["title", "search", "types", "cards", "pag"];
@@ -62,7 +67,7 @@ const Selection = ({ startBattle }) => {
           <Pokemons
             pokemons={currentItems}
             style={{ gridArea: nameGridAreas[3] }}
-            startBattle={startBattle}
+            startBattle={handleStartBattle}
           />
           <Pagination
             style={{ gridArea: nameGridAreas[4] }}

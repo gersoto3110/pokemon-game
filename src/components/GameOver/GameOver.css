@@ -1,0 +1,24 @@
+.game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  height: 100%;
+
+}
+
+.game-over span {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.game-over button {
+  --color: rgb(224, 224, 224);
+  width: 25%;
+  height: 2rem;
+  border-radius: .8rem;
+  background: var(--color);
+  box-shadow: 0 0 1rem var(--color);
+}

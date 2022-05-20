@@ -1,7 +1,17 @@
 import "./Layout.css";
 
-const Layout = ({ children }) => {
-  return <main className="layout">{children}</main>;
+import { Outlet } from "react-router-dom";
+import Header from "../Header/Header";
+
+const Layout = () => {
+  return (
+    <>
+      <Header />
+      <main className="layout">
+        <Outlet />
+      </main>
+    </>
+  );
 };
 
 export default Layout;

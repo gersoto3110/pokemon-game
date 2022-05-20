@@ -1,0 +1,40 @@
+header {
+  height: 70px;
+  width: 100%;
+  padding: 0 1rem;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+header h1 {
+  width: 20rem;
+  text-align: left;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  color: black;
+  display: flex;
+}
+
+.links a .auth-icon {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .links a .auth-type {
+    display: none;
+  }
+
+  .links a .auth-icon {
+    height: 100%;
+    display: block;
+  }
+}

@@ -56,6 +56,8 @@ function reducer(prevState, action) {
         times: {
           ...prevState.times,
           typing: 50,
+          deleting: 25,
+          pausing: 500,
         },
       };
     case types.normalTyping:
@@ -63,7 +65,7 @@ function reducer(prevState, action) {
         ...prevState,
         times: {
           ...prevState.times,
-          typing: initState.times.typing,
+          ...initState.times,
         },
       };
     default:
@@ -148,7 +150,7 @@ const useTyping = () => {
     dispatch({ type: types.normalTyping });
   };
 
-  const startTyped = !state.texts;
+  const startTyped = state.texts !== null;
 
   return {
     typed: state.typed,

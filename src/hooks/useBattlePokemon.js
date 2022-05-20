@@ -23,8 +23,6 @@ function initialBattle(pokemon, rivalPokemon) {
     IA: initPlayer(rivalPokemon),
     loading: true,
     error: null,
-    texts: null,
-    startBattle: false,
   };
 }
 

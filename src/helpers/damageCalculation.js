@@ -12,7 +12,7 @@ function effectiveDamage(attack, pokemon, rival) {
 
   let levelDamage = Math.floor((2 * level) / 5 + 2);
   let effectiveAttack = Math.floor(
-    (levelDamage * attack.power * pokemon[key.attack]) / rival[key.defense]
+    (levelDamage * attack.power * pokemon.stats[key.attack]) / rival.stats[key.defense]
   );
 
   return Math.floor(effectiveAttack / 50) + 2;

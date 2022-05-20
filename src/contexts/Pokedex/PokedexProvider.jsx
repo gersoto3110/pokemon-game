@@ -1,7 +1,7 @@
 import { createContext } from "react";
-import createPokedex from "../helpers/createPokedex";
-import getManyPokemonsUrlApi from "../helpers/getManyPokemonsUrlApi";
-import useGetAllData from "../hooks/useGetAllData";
+import createPokedex from "../../helpers/createPokedex";
+import getManyPokemonsUrlApi from "../../helpers/getManyPokemonsUrlApi";
+import useGetAllData from "../../hooks/useGetAllData";
 
 const PokedexContext = createContext();
 

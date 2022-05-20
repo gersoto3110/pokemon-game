@@ -1,7 +1,10 @@
-import Layout from "./components/Layout/Layout";
-import { useState } from "react";
-import { Selection, Battle } from "./views";
-import PokedexProvider from "./contexts/Pokedex";
+import AppRouter from "./AppRouter";
+import AuthProvider from "./auth/AuthProvider";
+
+// import Layout from "./components/Layout/Layout";
+// import { useState } from "react";
+// import { Selection, Battle } from "./views";
+// import PokedexProvider from "./contexts/Pokedex";
 
 /* 
   Crear un componente Selection que cuente con un input que permita filtrar un pokemon.
@@ -168,26 +171,29 @@ import PokedexProvider from "./contexts/Pokedex";
 
 function App() {
   // const [ready, setReady] = useState(false);
-  const [selectedPokemon, setSelectedPokemon] = useState(null);
+  // const [selectedPokemon, setSelectedPokemon] = useState(null);
 
-  const handleStartBattle = (pokemon) => {
-    setSelectedPokemon(pokemon);
-  };
+  // const handleStartBattle = (pokemon) => {
+  //   setSelectedPokemon(pokemon);
+  // };
 
   // const handleEndBattle = () => {
   //   setSelectedPokemon(null);
   // };
 
   return (
-    <PokedexProvider>
-      <Layout>
-        {!selectedPokemon ? (
-          <Selection startBattle={handleStartBattle} />
-        ) : (
-          <Battle selectedPokemon={selectedPokemon}/>
-        )}
-      </Layout>
-    </PokedexProvider>
+    // <PokedexProvider>
+    //   <Layout>
+    //     {!selectedPokemon ? (
+    //       <Selection startBattle={handleStartBattle} />
+    //     ) : (
+    //       <Battle selectedPokemon={selectedPokemon}/>
+    //     )}
+    //   </Layout>
+    // </PokedexProvider>
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
   );
 }
 
