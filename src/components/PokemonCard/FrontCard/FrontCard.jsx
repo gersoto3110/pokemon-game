@@ -1,7 +1,7 @@
 import "./FrontCard.css";
 
-import formatNamePokemon from "../../../helpers/formatNamePokemon";
-import formatNumberPokemon from "../../../helpers/formatNumberPokemon";
+import formatNamePokemon from "../../../utils/formatNamePokemon";
+import formatNumberPokemon from "../../../utils/formatNumberPokemon";
 
 const FrontCard = ({ number, name, imgUrl }) => {
   return (

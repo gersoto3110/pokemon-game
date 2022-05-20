@@ -8,10 +8,10 @@ import {
   SearchInput,
   Pagination,
 } from "../../../components";
-import itemsPerPagePerMatchMedia from "../../../helpers/itemsPerPagePerMatchMedia";
+import itemsPerPagePerMatchMedia from "../../../utils/itemsPerPagePerMatchMedia";
 import usePokedex from "../../../contexts/Pokedex/usePokedex";
 import useGameBattle from "../../../contexts/GameBattle/useGameBattle";
-import randomSelectItemArray from "../../../helpers/randomSelectItemArray";
+import randomSelectItemArray from "../../../utils/randomSelectItemArray";
 
 const Selection = () => {
   const { pokedex, error, loading } = usePokedex();

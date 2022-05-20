@@ -8,8 +8,8 @@ import {
   Typing,
 } from "../../../components";
 import { useTyping } from "../../../hooks";
-import randomSelectItemArray from "../../../helpers/randomSelectItemArray";
-import formatNamePokemon from "../../../helpers/formatNamePokemon";
+import randomSelectItemArray from "../../../utils/randomSelectItemArray";
+import formatNamePokemon from "../../../utils/formatNamePokemon";
 import useGameBattle from "../../../contexts/GameBattle/useGameBattle";
 import players from "../../../constants/players";
 

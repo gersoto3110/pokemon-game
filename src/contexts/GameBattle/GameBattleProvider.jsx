@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 import players from "../../constants/players";
 import createPlayer from "../../helpers/createPlayer";
-import damageCalculation from "../../helpers/damageCalculation";
+import damageCalculation from "../../utils/damageCalculation";
 
 const GameBattleContext = createContext();
 
